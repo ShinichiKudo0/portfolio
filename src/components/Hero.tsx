@@ -46,16 +46,16 @@ export function Hero() {
         <div className="overflow-hidden mb-6 pb-2">
           <h1 
             ref={titleRef} 
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1]"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1] drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
           >
             Systems Builder & <br />
-            <span className="text-muted-foreground">AI Architect.</span>
+            <span className="text-zinc-200">AI Architect.</span>
           </h1>
         </div>
         
         <p 
           ref={subtitleRef} 
-          className="text-lg md:text-2xl text-foreground/90 max-w-3xl mb-10 leading-relaxed font-light"
+          className="text-lg md:text-2xl text-foreground/90 max-w-3xl mb-10 leading-relaxed font-light drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]"
         >
           A human who solves problems using his brain and AI as a superpower. I design, build, and ship full systems (web platforms, AI agents, automation pipelines) that would normally take a whole team.
         </p>

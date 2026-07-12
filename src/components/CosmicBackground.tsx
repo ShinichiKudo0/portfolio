@@ -271,8 +271,9 @@ function PhysicsController() {
     const maxScroll = document.body.scrollHeight - window.innerHeight;
     const scrollProgress = maxScroll > 0 ? scrollY / maxScroll : 0;
     
-    const targetZ = 15 - (scrollProgress * 5); 
-    const targetY = 3 - (scrollProgress * 2);
+    // Accelerate the camera forward and dive into the event horizon (void) at the bottom of the page
+    const targetZ = 15 - (scrollProgress * 15.5); 
+    const targetY = 3 - (scrollProgress * 3);
     
     camera.position.z = THREE.MathUtils.lerp(camera.position.z, targetZ, 0.05);
     camera.position.y = THREE.MathUtils.lerp(camera.position.y, targetY, 0.05);
