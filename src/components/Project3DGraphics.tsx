@@ -10,7 +10,7 @@ function NodeNetworkMesh() {
   const ref = useRef<THREE.Group>(null);
   const pointsRef = useRef<THREE.Points>(null);
   
-  const particleCount = 100;
+  const particleCount = 60;
   const positions = useMemo(() => {
     const p = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount; i++) {
@@ -43,7 +43,7 @@ function NodeNetworkMesh() {
 
 export function NodeNetworkScene() {
   return (
-    <Canvas camera={{ position: [0, 0, 5] }}>
+    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, 1]}>
       <ambientLight intensity={0.5} />
       <NodeNetworkMesh />
     </Canvas>
@@ -87,7 +87,7 @@ function VoyageSphereMesh() {
 
 export function VoyageSphereScene() {
   return (
-    <Canvas camera={{ position: [0, 0, 5] }}>
+    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, 1]}>
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} intensity={1.5} color="#6ee7b7" />
       <VoyageSphereMesh />
@@ -129,7 +129,7 @@ function ShieldCrystalMesh() {
 
 export function ShieldCrystalScene() {
   return (
-    <Canvas camera={{ position: [0, 0, 5] }}>
+    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, 1]}>
       <ambientLight intensity={1} />
       <directionalLight position={[5, 5, 5]} intensity={2} color="#c4b5fd" />
       <ShieldCrystalMesh />

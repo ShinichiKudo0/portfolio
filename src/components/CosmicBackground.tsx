@@ -96,7 +96,7 @@ const blackHoleFragment = `
     float transmittance = 1.0;
 
     // High-precision raymarching loop
-    for(int i = 0; i < 300; i++) {
+    for(int i = 0; i < 120; i++) {
         float r = length(p);
         
         // 1. Crisp Event Horizon
@@ -158,7 +158,7 @@ const blackHoleFragment = `
         v = next_v;
         
         // Adaptive step size based on distance for sharp edges but fast rendering
-        dt = max(0.015, r * 0.03);
+        dt = max(0.04, r * 0.05);
     }
 
     if (escape > 0.5) {
@@ -290,7 +290,7 @@ export function CosmicBackground() {
   return (
     <div className="fixed inset-0 -z-10 h-full w-full pointer-events-auto bg-black">
       {/* Maximum rendering quality, strictly no EffectComposer to prevent downscaling */}
-      <Canvas camera={{ position: [0, 3, 15], fov: 45 }} dpr={[1.5, 2]} gl={{ antialias: true, powerPreference: "high-performance" }}>
+      <Canvas camera={{ position: [0, 3, 15], fov: 45 }} dpr={[1, 1]} gl={{ antialias: true, powerPreference: "high-performance" }}>
         
         <RayTracedBlackHole />
         <PhysicsController />
