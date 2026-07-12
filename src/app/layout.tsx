@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mayank Mehra | Systems Builder & AI Architect",
     description: "A showcase of my work and experience as an AI Systems Architect.",
-    url: "https://mayankmehra.com", // Replace with the actual domain later
+    url: "https://mayank-mehra.vercel.app",
     siteName: "Mayank Mehra Portfolio",
     type: "website",
   },
