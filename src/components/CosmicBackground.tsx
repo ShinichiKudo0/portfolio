@@ -59,14 +59,16 @@ const blackHoleFragment = `
   }
 
   vec3 getBackground(vec3 dir) {
-      // Map 3D dir to 2D for stars
-      // Multiply by a large number to get tiny sharp stars, and correct aspect ratio stretching
-      vec2 uv = vec2(atan(dir.z, dir.x), asin(dir.y));
-      float starVal = hash21(floor(uv * vec2(800.0, 800.0)));
-      float star = smoothstep(0.998, 1.0, starVal) * 2.5; // Brighter, sharper stars
+      float timeOffset = uTime * 0.01;
       
-      // Milky way band
-      float band = exp(-abs(dir.y) * 15.0) * fbm(dir * 20.0);
+      // Map 3D dir to 2D for stars and rotate slowly
+      vec2 uv = vec2(atan(dir.z, dir.x) + timeOffset, asin(dir.y));
+      float starVal = hash21(floor(uv * vec2(800.0, 800.0)));
+      float star = smoothstep(0.998, 1.0, starVal) * 2.5;
+      
+      // Milky way band - add slow drift to the fbm noise for flowing dust
+      vec3 dustPos = dir * 20.0 + vec3(timeOffset * 10.0, 0.0, timeOffset * 5.0);
+      float band = exp(-abs(dir.y) * 15.0) * fbm(dustPos);
       vec3 bandColor = vec3(0.05, 0.1, 0.2) * band;
       
       return vec3(star) + bandColor;
