@@ -14,10 +14,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mayank Mehra | Systems Builder & AI Architect",
+  title: "Mayank Mehra",
   description: "A showcase of my work and experience as an AI Systems Architect.",
   openGraph: {
-    title: "Mayank Mehra | Systems Builder & AI Architect",
+    title: "Mayank Mehra",
     description: "A showcase of my work and experience as an AI Systems Architect.",
     url: "https://mayank-mehra.vercel.app",
     siteName: "Mayank Mehra Portfolio",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mayank Mehra | Systems Builder & AI Architect",
+    title: "Mayank Mehra",
     description: "A showcase of my work and experience as an AI Systems Architect.",
   },
 };
