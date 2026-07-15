@@ -6,7 +6,10 @@ import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Noise } from "@/components/Noise";
 import { CustomCursor } from "@/components/CustomCursor";
-import { CosmicBackground } from "@/components/CosmicBackground";
+import { PerformanceProvider } from "@/performance/context";
+import dynamic from "next/dynamic";
+
+const CosmicBackground = dynamic(() => import("@/components/CosmicBackground").then(mod => mod.CosmicBackground));
 
 const inter = Inter({
   variable: "--font-inter",
@@ -41,16 +44,18 @@ export default function RootLayout({
       className={`${inter.variable} antialiased dark`}
     >
       <body className="min-h-full flex flex-col font-sans selection:bg-primary selection:text-primary-foreground bg-zinc-950 text-foreground relative">
-        <SmoothScroll>
-          <CustomCursor />
-          <Noise />
-          <CosmicBackground />
-          <Navbar />
-          <main className="flex-1 pt-[72px]">
-            {children}
-          </main>
-          <Footer />
-        </SmoothScroll>
+        <PerformanceProvider>
+          <SmoothScroll>
+            <CustomCursor />
+            <Noise />
+            <CosmicBackground />
+            <Navbar />
+            <main className="flex-1 pt-[72px]">
+              {children}
+            </main>
+            <Footer />
+          </SmoothScroll>
+        </PerformanceProvider>
       </body>
     </html>
   );

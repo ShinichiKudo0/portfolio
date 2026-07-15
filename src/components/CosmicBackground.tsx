@@ -289,22 +289,53 @@ function PhysicsController() {
   return null;
 }
 
+import { usePerformance, CanvasPerformanceMonitor } from "@/performance/context";
+import { useEffect, useState } from "react";
+
 export function CosmicBackground() {
+  const { presets, tier } = usePerformance();
+  const [showCanvas, setShowCanvas] = useState(false);
+
+  // Lazy initialize to avoid hydration mismatch and allow Performance Engine to boot
+  useEffect(() => {
+    setShowCanvas(true);
+  }, []);
+
+  if (!showCanvas) {
+    return (
+      <div className="fixed inset-0 -z-10 h-full w-full pointer-events-auto bg-black" />
+    );
+  }
+
+  // Reduce shader complexity on lower tiers by conditionally passing a uniform or just rendering less planets
+  const showExtraPlanets = presets.shaderComplexity !== 'basic';
+
   return (
     <div className="fixed inset-0 -z-10 h-full w-full pointer-events-auto bg-black">
-      {/* Maximum rendering quality, strictly no EffectComposer to prevent downscaling */}
-      <Canvas camera={{ position: [0, 3, 15], fov: 45 }} dpr={[1, 1]} gl={{ antialias: true, powerPreference: "high-performance" }}>
-        
+      <Canvas 
+         camera={{ position: [0, 3, 15], fov: 45 }} 
+         dpr={[1, presets.dpr]} 
+         gl={{ antialias: true, powerPreference: "high-performance" }}
+         onCreated={({ gl }) => {
+            // Memory management: strict disposal
+            gl.setAnimationLoop(() => {
+               // The monitor handles visibility pauses if needed
+            });
+         }}
+      >
+        <CanvasPerformanceMonitor />
         <RayTracedBlackHole />
         <PhysicsController />
 
         <group>
           <OrbitalPlanet distance={12} speed={0.4} size={0.06} color="#ffffff" startAngle={0} inclination={0.2} />
-          <OrbitalPlanet distance={18} speed={0.2} size={0.10} color="#ffaa66" startAngle={Math.PI} inclination={-0.4} />
-          <OrbitalPlanet distance={14} speed={0.35} size={0.04} color="#88ccff" startAngle={Math.PI / 2} inclination={0.8} />
+          {showExtraPlanets && (
+             <>
+               <OrbitalPlanet distance={18} speed={0.2} size={0.10} color="#ffaa66" startAngle={Math.PI} inclination={-0.4} />
+               <OrbitalPlanet distance={14} speed={0.35} size={0.04} color="#88ccff" startAngle={Math.PI / 2} inclination={0.8} />
+             </>
+          )}
         </group>
-
-        {/* Note: EffectComposer entirely removed to guarantee native physical resolution and crisp pixel rendering */}
       </Canvas>
       <div className="absolute inset-0 bg-black/30 pointer-events-none z-0" />
     </div>

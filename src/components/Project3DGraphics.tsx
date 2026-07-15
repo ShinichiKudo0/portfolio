@@ -5,12 +5,13 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial, Points, PointMaterial, Line, Icosahedron } from "@react-three/drei";
 import * as THREE from "three";
 
+import { usePerformance, CanvasPerformanceMonitor } from "@/performance/context";
+
 // 1. AI Mentorship Network (Node Network / Brain)
-function NodeNetworkMesh() {
+function NodeNetworkMesh({ particleCount }: { particleCount: number }) {
   const ref = useRef<THREE.Group>(null);
   const pointsRef = useRef<THREE.Points>(null);
   
-  const particleCount = 60;
   const positions = useMemo(() => {
     const p = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount; i++) {
@@ -42,10 +43,16 @@ function NodeNetworkMesh() {
 }
 
 export function NodeNetworkScene() {
+  const { presets } = usePerformance();
+  // Map our preset particle counts (5000, 3000, 1500, 500) to something appropriate for this small scene.
+  // The original was 60. So we scale it.
+  const particleCount = Math.floor(presets.particles / 50);
+
   return (
-    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, 1]}>
+    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, presets.dpr]} onCreated={({gl}) => gl.setAnimationLoop(() => {})}>
+      <CanvasPerformanceMonitor />
       <ambientLight intensity={0.5} />
-      <NodeNetworkMesh />
+      <NodeNetworkMesh particleCount={particleCount} />
     </Canvas>
   );
 }
@@ -86,8 +93,10 @@ function VoyageSphereMesh() {
 }
 
 export function VoyageSphereScene() {
+  const { presets } = usePerformance();
   return (
-    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, 1]}>
+    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, presets.dpr]} onCreated={({gl}) => gl.setAnimationLoop(() => {})}>
+      <CanvasPerformanceMonitor />
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} intensity={1.5} color="#6ee7b7" />
       <VoyageSphereMesh />
@@ -128,8 +137,10 @@ function ShieldCrystalMesh() {
 }
 
 export function ShieldCrystalScene() {
+  const { presets } = usePerformance();
   return (
-    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, 1]}>
+    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, presets.dpr]} onCreated={({gl}) => gl.setAnimationLoop(() => {})}>
+      <CanvasPerformanceMonitor />
       <ambientLight intensity={1} />
       <directionalLight position={[5, 5, 5]} intensity={2} color="#c4b5fd" />
       <ShieldCrystalMesh />
