@@ -307,8 +307,9 @@ export function CosmicBackground() {
     );
   }
 
-  // Reduce shader complexity on lower tiers by conditionally passing a uniform or just rendering less planets
+  // Reduce shader complexity on lower tiers
   const showExtraPlanets = presets.shaderComplexity !== 'basic';
+  const isPerformanceTier = presets.shaderComplexity === 'basic';
 
   return (
     <div className="fixed inset-0 -z-10 h-full w-full pointer-events-auto bg-black">
@@ -324,7 +325,8 @@ export function CosmicBackground() {
          }}
       >
         <CanvasPerformanceMonitor />
-        <RayTracedBlackHole />
+        {/* Hide the extremely heavy raymarching shader on low-end devices */}
+        {!isPerformanceTier && <RayTracedBlackHole />}
         <PhysicsController />
 
         <group>
@@ -337,7 +339,7 @@ export function CosmicBackground() {
           )}
         </group>
       </Canvas>
-      <div className="absolute inset-0 bg-black/30 pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-black/40 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.8)_100%)] pointer-events-none z-0" />
     </div>
   );
 }
