@@ -7,20 +7,20 @@ import { Card } from "./ui/card";
 
 const faqs = [
   {
-    question: "What does a B2B Marketing Automation Architect do?",
-    answer: "A B2B Marketing Automation Architect designs and implements cloud-hosted systems to scale revenue operations. Instead of manual lead routing, I build custom n8n workflows, data enrichment pipelines, and automated multi-channel campaigns that process prospects seamlessly from discovery to outreach."
+    question: "What is your core tech stack for full-stack development?",
+    answer: "I specialize in the React ecosystem, primarily using Next.js and TypeScript for scalable, server-rendered frontends. On the backend, I build RESTful APIs using Node.js/Express or Python/FastAPI, integrating with databases like Firebase and PostgreSQL."
   },
   {
-    question: "Why use custom n8n workflows instead of standard Zapier integrations?",
-    answer: "Cloud-hosted n8n environments allow for complex, multi-step data routing and custom API integrations without the strict rate limits and high costs of standard Zapier setups. It provides a true systems-level architecture for deep data enrichment and conditional logic necessary for B2B growth."
+    question: "How do you architect multi-agent AI systems?",
+    answer: "I design stateless, event-driven pipelines (using n8n, OpenAI, and Google Gemini) where autonomous agents handle specific micro-tasks—like topic research, data enrichment, or content generation—passing structured JSON payloads between nodes without human intervention."
   },
   {
-    question: "How do you automate cold outreach campaigns at scale?",
-    answer: "Scaling cold outreach requires structured data. I build automated pipelines that enrich prospect data, segment audiences, and trigger multi-channel sequences. This ensures campaigns execute with high deliverability and accurate audience engagement tracking."
+    question: "How do you approach building machine learning applications?",
+    answer: "I focus on practical deployment and performance. For example, when building an AI deepfake detection platform, I engineered a Python/FastAPI backend using Librosa for audio feature extraction (MFCCs) and Scikit-learn's Isolation Forest for anomaly detection, optimizing the environment for cloud deployment with strict memory management."
   },
   {
-    question: "How does a Next.js frontend integrate with backend automation?",
-    answer: "Next.js provides a lightning-fast, server-rendered frontend that can connect directly to automated backend workflows via API routes. This allows modern web experiences to act as dynamic endpoints, triggering automations or displaying live enriched data instantly."
+    question: "Can you integrate custom software with marketing/GTM operations?",
+    answer: "Yes. My background in software engineering allows me to treat GTM operations as data pipelines. I build custom webhooks, scrape data, and use APIs to route enriched payloads directly into CRM and outreach platforms, eliminating the need for basic Zapier integrations."
   }
 ];
 

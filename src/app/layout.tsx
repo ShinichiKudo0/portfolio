@@ -18,22 +18,22 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mayank-mehra.vercel.app"),
-  title: "Mayank Mehra | AI Systems Architect",
-  description: "A showcase of my work and experience as an AI Systems Architect.",
+  title: "Mayank Mehra | Software Engineer & Systems Architect",
+  description: "Portfolio of Mayank Mehra. I build full-stack web applications, multi-agent AI systems, and scalable backend infrastructure.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Mayank Mehra | AI Systems Architect",
-    description: "A showcase of my work and experience as an AI Systems Architect.",
+    title: "Mayank Mehra | Software Engineer & Systems Architect",
+    description: "Portfolio of Mayank Mehra. I build full-stack web applications, multi-agent AI systems, and scalable backend infrastructure.",
     url: "https://mayank-mehra.vercel.app",
     siteName: "Mayank Mehra Portfolio",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mayank Mehra | AI Systems Architect",
-    description: "A showcase of my work and experience as an AI Systems Architect.",
+    title: "Mayank Mehra | Software Engineer & Systems Architect",
+    description: "Portfolio of Mayank Mehra. I build full-stack web applications, multi-agent AI systems, and scalable backend infrastructure.",
   },
 };
 
@@ -44,7 +44,7 @@ const jsonLd = {
       "@type": "ProfilePage",
       "@id": "https://mayank-mehra.vercel.app/#webpage",
       "url": "https://mayank-mehra.vercel.app",
-      "name": "Mayank Mehra | AI Systems Architect Portfolio",
+      "name": "Mayank Mehra | Software Engineer & Systems Architect Portfolio",
       "mainEntity": {
         "@id": "https://mayank-mehra.vercel.app/#person"
       }
@@ -53,7 +53,7 @@ const jsonLd = {
       "@type": "Person",
       "@id": "https://mayank-mehra.vercel.app/#person",
       "name": "Mayank Mehra",
-      "jobTitle": "AI Systems Architect",
+      "jobTitle": "Software Engineer & Systems Architect",
       "url": "https://mayank-mehra.vercel.app",
       "worksFor": {
         "@type": "Organization",

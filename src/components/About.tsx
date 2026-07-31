@@ -52,10 +52,10 @@ export function About() {
           <div className="p-6 font-mono text-sm leading-relaxed text-zinc-300 h-[320px] flex flex-col justify-end relative shadow-inner">
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent z-10 pointer-events-none"></div>
             <div className="space-y-2 relative z-20">
-              <p>{`> [INFO] Initializing autonomy engine...`}</p>
-              <p>{`> [WARN] Legacy processes detected. Deprecating...`}</p>
-              <p>{`> [OK] Scraping payloads... 1,024 records parsed.`}</p>
-              <p>{`> [OK] GTM sequences armed and ready.`}</p>
+              <p>{`> [INFO] Initializing server-side rendering...`}</p>
+              <p>{`> [WARN] Legacy REST endpoints detected. Migrating to FastAPI...`}</p>
+              <p>{`> [OK] Multi-agent orchestration layer active.`}</p>
+              <p>{`> [OK] Model weights loaded. Deepfake detection armed.`}</p>
               <p>{`> [INFO] Connecting to Gemini API...`}</p>
             </div>
             <p className="mt-4 text-green-400 animate-pulse relative z-20 font-bold">{`> System online. Awaiting command_`}</p>
@@ -73,13 +73,13 @@ export function About() {
           
           <div className="text-2xl md:text-3xl leading-snug font-medium space-y-8">
             <p>
-              I don't just write code. I treat AI as a direct extension of my own brain to design, build, and ship complete systems that actually work.
+              I am a Software Engineer and Tech Builder. I don't just write code—I treat AI as a direct extension of my own brain to design, build, and ship complete systems from scratch.
             </p>
             <p className="text-muted-foreground">
-              Most engineering bottlenecks are self-inflicted. I optimize for speed, extreme leverage, and zero friction. I operate like a full product team disguised as one person. I strip out the latency between having an idea and seeing it run in production.
+              Whether it's developing a high-performance Next.js full-stack platform, engineering a Python/FastAPI backend for machine learning, or orchestrating multi-agent AI pipelines, I can build it. I optimize for extreme leverage and zero friction, stripping out the latency between having an idea and seeing it run in production.
             </p>
             <p>
-              Right now, I'm building autonomous agents, ruthless automation pipelines, and high-performance web apps that fundamentally change how companies operate. If a process requires human repetition, I write the code that kills it.
+              Right now, I'm building AI-powered security platforms, custom software architectures, and automated infrastructure that fundamentally changes how businesses operate. I operate like a full product team disguised as one person.
             </p>
           </div>
         </div>

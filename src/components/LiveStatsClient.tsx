@@ -7,9 +7,9 @@ import { Card } from "./ui/card";
 import { Activity, Zap, Server } from "lucide-react";
 
 interface Stats {
-  activeWorkflows: number;
   systemUptime: number; // percentage
-  apiCallsProcessed: number;
+  aiAgentsDeployed: number;
+  apiEndpointsBuilt: number;
 }
 
 interface LiveStatsClientProps {
@@ -85,18 +85,6 @@ export function LiveStatsClient({ initialStats }: LiveStatsClientProps) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="bg-zinc-900/50 border-zinc-800/50 backdrop-blur-sm p-6 flex flex-col items-center justify-center text-center">
-          <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-            <Zap className="w-6 h-6 text-primary" />
-          </div>
-          <div className="text-4xl font-bold text-foreground mb-2">
-            <AnimatedCounter value={initialStats.activeWorkflows} />
-          </div>
-          <div className="text-sm text-muted-foreground uppercase tracking-wider font-medium">
-            Active Workflows
-          </div>
-        </Card>
-
         <Card className="bg-zinc-900/50 border-zinc-800/50 backdrop-blur-sm p-6 flex flex-col items-center justify-center text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-50" />
           <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mb-4">
@@ -111,14 +99,26 @@ export function LiveStatsClient({ initialStats }: LiveStatsClientProps) {
         </Card>
 
         <Card className="bg-zinc-900/50 border-zinc-800/50 backdrop-blur-sm p-6 flex flex-col items-center justify-center text-center">
+          <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <Zap className="w-6 h-6 text-primary" />
+          </div>
+          <div className="text-4xl font-bold text-foreground mb-2">
+            <AnimatedCounter value={initialStats.aiAgentsDeployed} />+
+          </div>
+          <div className="text-sm text-muted-foreground uppercase tracking-wider font-medium">
+            AI Agents Deployed
+          </div>
+        </Card>
+
+        <Card className="bg-zinc-900/50 border-zinc-800/50 backdrop-blur-sm p-6 flex flex-col items-center justify-center text-center">
           <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-4">
             <Activity className="w-6 h-6 text-blue-500" />
           </div>
           <div className="text-4xl font-bold text-foreground mb-2">
-            <AnimatedCounter value={initialStats.apiCallsProcessed} format />
+            <AnimatedCounter value={initialStats.apiEndpointsBuilt} />+
           </div>
           <div className="text-sm text-muted-foreground uppercase tracking-wider font-medium">
-            API Calls Processed
+            API Endpoints Built
           </div>
         </Card>
       </div>

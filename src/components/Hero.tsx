@@ -48,8 +48,8 @@ export function Hero() {
             ref={titleRef} 
             className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1] drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
           >
-            Systems Builder & <br />
-            <span className="text-zinc-200">AI Architect.</span>
+            I Engineer Software, <br />
+            <span className="text-zinc-200">AI Systems, and Scalable Infrastructure.</span>
           </h1>
         </div>
         
@@ -57,7 +57,7 @@ export function Hero() {
           ref={subtitleRef} 
           className="text-base sm:text-lg md:text-2xl text-foreground/90 max-w-3xl mb-10 leading-relaxed font-light drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]"
         >
-          A human who solves problems using his brain and AI as a superpower. I design, build, and ship full systems (web platforms, AI agents, automation pipelines) that would normally take a whole team.
+          A versatile builder who works across the entire stack. From developing React/Next.js frontends and Python/FastAPI backends to orchestrating LLM-powered multi-agent systems and automating enterprise GTM workflows.
         </p>
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row flex-wrap gap-4">

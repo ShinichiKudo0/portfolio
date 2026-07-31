@@ -9,9 +9,9 @@ async function fetchStats() {
   // await new Promise(resolve => setTimeout(resolve, 100)); // 100ms simulated delay (optional)
 
   return {
-    activeWorkflows: 42,
     systemUptime: 99.99,
-    apiCallsProcessed: 1200000, // 1.2M+
+    aiAgentsDeployed: 15,
+    apiEndpointsBuilt: 40,
   };
 }
 
