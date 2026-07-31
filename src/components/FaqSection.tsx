@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "How do you architect multi-agent AI systems?",
-    answer: "I design stateless, event-driven pipelines (using n8n, OpenAI, and Google Gemini) where autonomous agents handle specific micro-tasks—like topic research, data enrichment, or content generation—passing structured JSON payloads between nodes without human intervention."
+    answer: "I design stateless, event-driven pipelines (using n8n, OpenAI, and Google Gemini) where autonomous agents handle specific micro-tasks - like topic research, data enrichment, or content generation - passing structured JSON payloads between nodes without human intervention."
   },
   {
     question: "How do you approach building machine learning applications?",

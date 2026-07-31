@@ -42,22 +42,31 @@ export function Hero() {
       ref={containerRef} 
       className="relative min-h-[90vh] flex flex-col justify-end pb-20 md:pb-32 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto"
     >
-      <div className="relative z-10 max-w-4xl w-full">
-        <div className="overflow-hidden mb-6 pb-2">
-          <h1 
-            ref={titleRef} 
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1] drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
-          >
-            I Engineer Software, <br />
-            <span className="text-zinc-200">AI Systems, and Scalable Infrastructure.</span>
-          </h1>
+      <div className="relative z-10 w-full">
+        <div ref={titleRef} className="mb-12 w-full flex flex-col font-black uppercase tracking-widest leading-[0.85] text-[9vw] sm:text-[7vw] md:text-[6vw] lg:text-[5vw] xl:text-[4.5vw] drop-shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+          <div className="flex justify-between w-full text-foreground">
+            {'ENGINEERING'.split('').map((char, i) => <span key={i}>{char}</span>)}
+          </div>
+          <div className="flex justify-between w-full text-zinc-200">
+            {'SOFTWARE'.split('').map((char, i) => <span key={i}>{char}</span>)}
+            <span className="text-primary px-2">&</span>
+            {'AI'.split('').map((char, i) => <span key={i}>{char}</span>)}
+          </div>
+          <div className="flex justify-between w-full text-zinc-400">
+            {'SYSTEMS'.split('').map((char, i) => <span key={i}>{char}</span>)}
+            <span className="text-transparent">.</span>
+            {'SCALABLE'.split('').map((char, i) => <span key={i}>{char}</span>)}
+          </div>
+          <div className="flex justify-between w-full text-zinc-600">
+            {'INFRASTRUCTURE'.split('').map((char, i) => <span key={i}>{char}</span>)}
+          </div>
         </div>
         
         <p 
           ref={subtitleRef} 
-          className="text-base sm:text-lg md:text-2xl text-foreground/90 max-w-3xl mb-10 leading-relaxed font-light drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]"
+          className="text-base sm:text-lg md:text-2xl text-foreground/90 max-w-5xl mb-12 leading-relaxed font-light drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]"
         >
-          A human who engineers solutions using his brain and AI as a force multiplier. I design, architect, and ship complete systems—from high-performance web platforms to autonomous AI pipelines—that would typically require an entire product team.
+          A human who engineers solutions using his brain and AI as a force multiplier. I design, architect, and ship complete systems - from high-performance web platforms to autonomous AI pipelines - that would typically require an entire product team.
         </p>
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row flex-wrap gap-4">
