@@ -171,7 +171,7 @@ const blackHoleFragment = `
     col += diskAccum;
     
     // Cinematic ACES-like tonemapping
-    col = col * 1.5; // Boost exposure
+    col = col * 2.0; // Boost exposure
     col = (col * (2.51 * col + 0.03)) / (col * (2.43 * col + 0.59) + 0.14);
     col = pow(col, vec3(1.0 / 2.2));
 
@@ -336,7 +336,7 @@ export function CosmicBackground() {
           )}
         </group>
       </Canvas>
-      <div className="absolute inset-0 bg-black/40 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.8)_100%)] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-black/10 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.5)_100%)] pointer-events-none z-0" />
     </div>
   );
 }
