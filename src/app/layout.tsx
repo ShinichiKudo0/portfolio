@@ -74,13 +74,11 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} antialiased dark`}
     >
-      <head>
+      <body className="min-h-full flex flex-col font-sans selection:bg-primary selection:text-primary-foreground bg-zinc-950 text-foreground relative">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className="min-h-full flex flex-col font-sans selection:bg-primary selection:text-primary-foreground bg-zinc-950 text-foreground relative">
         <PerformanceProvider>
           <SmoothScroll>
             <CustomCursor />
