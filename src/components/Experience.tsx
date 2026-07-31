@@ -86,7 +86,7 @@ export function Experience() {
               className="w-full"
             >
               <TiltCard>
-                <Card className="bg-zinc-950/95 border-zinc-800/80 overflow-hidden group">
+                <Card className="bg-transparent border-zinc-800/80 overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <CardHeader className="relative z-10 pb-4 border-b border-zinc-800/50">
                     <CardTitle className="text-2xl flex items-center gap-2 text-foreground">
@@ -119,7 +119,7 @@ export function Experience() {
               className="w-full"
             >
               <TiltCard>
-                <Card className="bg-zinc-950/95 border-zinc-800/80 overflow-hidden group">
+                <Card className="bg-transparent border-zinc-800/80 overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <CardHeader className="relative z-10 pb-4 border-b border-zinc-800/50">
                     <CardTitle className="text-2xl flex items-center gap-2 text-foreground">

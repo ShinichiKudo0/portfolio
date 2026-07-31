@@ -87,7 +87,7 @@ export function Skills() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative rounded-3xl overflow-hidden bg-zinc-950 border border-zinc-800 p-8 md:p-12 text-center max-w-4xl mx-auto"
+          className="relative rounded-3xl overflow-hidden bg-transparent border border-zinc-800 p-8 md:p-12 text-center max-w-4xl mx-auto"
         >
           {/* Animated border gradient effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-primary/20 opacity-30" />

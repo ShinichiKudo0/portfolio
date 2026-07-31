@@ -318,8 +318,8 @@ export function CosmicBackground() {
     <div className="fixed inset-0 -z-10 h-full w-full pointer-events-none bg-black">
       <Canvas 
          camera={{ position: [0, 3, 15], fov: 45 }} 
-         dpr={[1, 1.5]} 
-         gl={{ antialias: true, powerPreference: "high-performance" }}
+         dpr={[1, 1]} 
+         gl={{ alpha: false, antialias: false, powerPreference: "high-performance" }}
       >
         <CanvasPerformanceMonitor />
         {/* Hide the extremely heavy raymarching shader on low-end devices */}

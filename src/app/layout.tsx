@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { CustomCursor } from "@/components/CustomCursor";
 import { Noise } from "@/components/Noise";
 
 import { PerformanceProvider } from "@/performance/context";
@@ -81,7 +82,7 @@ export default function RootLayout({
         />
         <PerformanceProvider>
           <SmoothScroll>
-
+            <CustomCursor />
             <Noise />
             <CosmicBackground />
             <Navbar />

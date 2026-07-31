@@ -107,7 +107,7 @@ export function Projects() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
               className="group"
             >
-              <Card className="h-full flex flex-col overflow-hidden bg-zinc-950/95 border-zinc-800/80 hover:border-primary/50 transition-colors rounded-2xl relative">
+              <Card className="h-full flex flex-col overflow-hidden bg-transparent border-zinc-800/80 hover:border-primary/50 transition-colors rounded-2xl relative">
                 
                 {/* 3D Visual Banner */}
                 <div className="h-48 md:h-64 w-full relative overflow-hidden bg-zinc-950/80 border-b border-zinc-800/80">

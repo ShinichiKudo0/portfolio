@@ -80,7 +80,7 @@ export function LiveStatsClient({ initialStats }: LiveStatsClientProps) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="bg-zinc-900/90 border-zinc-800/50 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden">
+        <Card className="bg-transparent border-zinc-800/50 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-50" />
           <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mb-4">
             <Server className="w-6 h-6 text-green-500" />
@@ -93,7 +93,7 @@ export function LiveStatsClient({ initialStats }: LiveStatsClientProps) {
           </div>
         </Card>
 
-        <Card className="bg-zinc-900/90 border-zinc-800/50 p-6 flex flex-col items-center justify-center text-center">
+        <Card className="bg-transparent border-zinc-800/50 p-6 flex flex-col items-center justify-center text-center">
           <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
             <Zap className="w-6 h-6 text-primary" />
           </div>
@@ -105,7 +105,7 @@ export function LiveStatsClient({ initialStats }: LiveStatsClientProps) {
           </div>
         </Card>
 
-        <Card className="bg-zinc-900/90 border-zinc-800/50 p-6 flex flex-col items-center justify-center text-center">
+        <Card className="bg-transparent border-zinc-800/50 p-6 flex flex-col items-center justify-center text-center">
           <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-4">
             <Activity className="w-6 h-6 text-blue-500" />
           </div>
