@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo, useEffect, useState } from "react";
+import { useRef, useMemo, useEffect, useState, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial, Points, PointMaterial, Line, Icosahedron } from "@react-three/drei";
 import * as THREE from "three";
@@ -52,10 +52,12 @@ export function NodeNetworkScene() {
   if (!show) return null;
 
   return (
-    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, presets.dpr]} onCreated={({gl}) => gl.setAnimationLoop(() => {})}>
+    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, 1.5]}>
       <CanvasPerformanceMonitor />
-      <ambientLight intensity={0.5} />
-      <NodeNetworkMesh particleCount={particleCount} />
+      <Suspense fallback={null}>
+        <ambientLight intensity={0.5} />
+        <NodeNetworkMesh particleCount={particleCount} />
+      </Suspense>
     </Canvas>
   );
 }
@@ -103,11 +105,13 @@ export function VoyageSphereScene() {
   if (!show) return null;
 
   return (
-    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, presets.dpr]} onCreated={({gl}) => gl.setAnimationLoop(() => {})}>
+    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, 1.5]}>
       <CanvasPerformanceMonitor />
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1.5} color="#6ee7b7" />
-      <VoyageSphereMesh />
+      <Suspense fallback={null}>
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 5]} intensity={1.5} color="#6ee7b7" />
+        <VoyageSphereMesh />
+      </Suspense>
     </Canvas>
   );
 }
@@ -152,11 +156,13 @@ export function ShieldCrystalScene() {
   if (!show) return null;
 
   return (
-    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, presets.dpr]} onCreated={({gl}) => gl.setAnimationLoop(() => {})}>
+    <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, 1.5]}>
       <CanvasPerformanceMonitor />
-      <ambientLight intensity={1} />
-      <directionalLight position={[5, 5, 5]} intensity={2} color="#c4b5fd" />
-      <ShieldCrystalMesh />
+      <Suspense fallback={null}>
+        <ambientLight intensity={1} />
+        <directionalLight position={[5, 5, 5]} intensity={2} color="#c4b5fd" />
+        <ShieldCrystalMesh />
+      </Suspense>
     </Canvas>
   );
 }

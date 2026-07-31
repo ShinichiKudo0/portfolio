@@ -10,10 +10,32 @@ import {
 } from "./ui/card";
 import { Button } from "./ui/button";
 import dynamic from "next/dynamic";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
-const NodeNetworkScene = dynamic(() => import("./Project3DGraphics").then(mod => mod.NodeNetworkScene), { ssr: false });
-const VoyageSphereScene = dynamic(() => import("./Project3DGraphics").then(mod => mod.VoyageSphereScene), { ssr: false });
-const ShieldCrystalScene = dynamic(() => import("./Project3DGraphics").then(mod => mod.ShieldCrystalScene), { ssr: false });
+const SceneLoader = () => (
+  <div className="w-full h-full flex items-center justify-center">
+    <div className="w-6 h-6 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
+  </div>
+);
+
+const NodeNetworkSceneComponent = dynamic(() => import("./Project3DGraphics").then(mod => mod.NodeNetworkScene), { ssr: false, loading: SceneLoader });
+const VoyageSphereSceneComponent = dynamic(() => import("./Project3DGraphics").then(mod => mod.VoyageSphereScene), { ssr: false, loading: SceneLoader });
+const ShieldCrystalSceneComponent = dynamic(() => import("./Project3DGraphics").then(mod => mod.ShieldCrystalScene), { ssr: false, loading: SceneLoader });
+
+function LazyScene({ Scene }: { Scene: React.ElementType }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "200px" });
+  return (
+    <div ref={ref} className="w-full h-full">
+      {isInView ? <Scene /> : null}
+    </div>
+  );
+}
+
+const NodeNetworkScene = () => <LazyScene Scene={NodeNetworkSceneComponent} />;
+const VoyageSphereScene = () => <LazyScene Scene={VoyageSphereSceneComponent} />;
+const ShieldCrystalScene = () => <LazyScene Scene={ShieldCrystalSceneComponent} />;
 
 const PROJECTS = [
   {
