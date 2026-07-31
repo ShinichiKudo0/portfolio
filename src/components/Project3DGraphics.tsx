@@ -45,7 +45,7 @@ function NodeNetworkMesh({ particleCount }: { particleCount: number }) {
 export function NodeNetworkScene() {
   const { presets } = usePerformance();
   const [show, setShow] = useState(false);
-  useEffect(() => { if (!/bot|googlebot|crawler|spider|robot|crawling|lighthouse/i.test(navigator.userAgent)) setShow(true); }, []);
+  useEffect(() => { if (!/bot|googlebot|crawler|spider|robot|crawling|lighthouse|google-inspectiontool|inspect/i.test(navigator.userAgent)) setShow(true); }, []);
   
   const particleCount = Math.floor(presets.particles / 50);
 
@@ -98,7 +98,7 @@ function VoyageSphereMesh() {
 export function VoyageSphereScene() {
   const { presets } = usePerformance();
   const [show, setShow] = useState(false);
-  useEffect(() => { if (!/bot|googlebot|crawler|spider|robot|crawling|lighthouse/i.test(navigator.userAgent)) setShow(true); }, []);
+  useEffect(() => { if (!/bot|googlebot|crawler|spider|robot|crawling|lighthouse|google-inspectiontool|inspect/i.test(navigator.userAgent)) setShow(true); }, []);
 
   if (!show) return null;
 
@@ -147,7 +147,7 @@ function ShieldCrystalMesh() {
 export function ShieldCrystalScene() {
   const { presets } = usePerformance();
   const [show, setShow] = useState(false);
-  useEffect(() => { if (!/bot|googlebot|crawler|spider|robot|crawling|lighthouse/i.test(navigator.userAgent)) setShow(true); }, []);
+  useEffect(() => { if (!/bot|googlebot|crawler|spider|robot|crawling|lighthouse|google-inspectiontool|inspect/i.test(navigator.userAgent)) setShow(true); }, []);
 
   if (!show) return null;
 
