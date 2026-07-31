@@ -71,7 +71,7 @@ export function About() {
             <div className="h-px w-12 bg-primary mb-8" />
           </div>
           
-          <div className="text-2xl md:text-3xl leading-snug font-medium space-y-8">
+          <div className="text-lg md:text-xl leading-relaxed font-medium space-y-8">
             <p>
               I am a Software Engineer and Tech Builder. I don't just write code—I treat AI as a direct extension of my own brain to design, build, and ship complete systems from scratch.
             </p>

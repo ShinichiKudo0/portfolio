@@ -76,12 +76,7 @@ export function LiveStatsClient({ initialStats }: LiveStatsClientProps) {
   return (
     <section className="relative z-10 w-full max-w-5xl mx-auto px-6 py-20">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-400 mb-6">
-          Live System Metrics
-        </h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-          Real-time performance of deployed architectures.
-        </p>
+        {/* Header removed as per user request */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
