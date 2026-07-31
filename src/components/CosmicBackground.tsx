@@ -315,17 +315,11 @@ export function CosmicBackground() {
   const isPerformanceTier = presets.shaderComplexity === 'basic';
 
   return (
-    <div className="fixed inset-0 -z-10 h-full w-full pointer-events-auto bg-black">
+    <div className="fixed inset-0 -z-10 h-full w-full pointer-events-none bg-black">
       <Canvas 
          camera={{ position: [0, 3, 15], fov: 45 }} 
-         dpr={[1, presets.dpr]} 
+         dpr={[1, 1.5]} 
          gl={{ antialias: true, powerPreference: "high-performance" }}
-         onCreated={({ gl }) => {
-            // Memory management: strict disposal
-            gl.setAnimationLoop(() => {
-               // The monitor handles visibility pauses if needed
-            });
-         }}
       >
         <CanvasPerformanceMonitor />
         {/* Hide the extremely heavy raymarching shader on low-end devices */}

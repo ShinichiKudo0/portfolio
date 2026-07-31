@@ -63,7 +63,7 @@ export function FaqSection() {
           return (
             <Card 
               key={index} 
-              className="bg-zinc-900/50 border-zinc-800/50 overflow-hidden cursor-pointer backdrop-blur-sm transition-colors hover:bg-zinc-900/80"
+              className="bg-zinc-900/90 border-zinc-800/50 overflow-hidden cursor-pointer transition-colors hover:bg-zinc-800/90"
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
               <div className="px-6 py-4 flex items-center justify-between">

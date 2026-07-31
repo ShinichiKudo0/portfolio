@@ -23,7 +23,7 @@ const NodeNetworkSceneComponent = dynamic(() => import("./Project3DGraphics").th
 const VoyageSphereSceneComponent = dynamic(() => import("./Project3DGraphics").then(mod => mod.VoyageSphereScene), { ssr: false, loading: SceneLoader });
 const ShieldCrystalSceneComponent = dynamic(() => import("./Project3DGraphics").then(mod => mod.ShieldCrystalScene), { ssr: false, loading: SceneLoader });
 
-function LazyScene({ Scene }: { Scene: React.ElementType }) {
+function LazyScene({ Scene }: { Scene: React.ComponentType<any> }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "200px" });
   return (
@@ -107,7 +107,7 @@ export function Projects() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
               className="group"
             >
-              <Card className="h-full flex flex-col overflow-hidden bg-zinc-950/50 backdrop-blur-sm border-zinc-800/80 hover:border-primary/50 transition-colors rounded-2xl relative">
+              <Card className="h-full flex flex-col overflow-hidden bg-zinc-950/95 border-zinc-800/80 hover:border-primary/50 transition-colors rounded-2xl relative">
                 
                 {/* 3D Visual Banner */}
                 <div className="h-48 md:h-64 w-full relative overflow-hidden bg-zinc-950/80 border-b border-zinc-800/80">
@@ -116,7 +116,7 @@ export function Projects() {
                   </div>
                   
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
+                  <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 flex items-center gap-2">
                       View System <ArrowUpRight size={18} />
                     </a>
