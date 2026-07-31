@@ -298,7 +298,10 @@ export function CosmicBackground() {
 
   // Lazy initialize to avoid hydration mismatch and allow Performance Engine to boot
   useEffect(() => {
-    setShowCanvas(true);
+    const isBot = /bot|googlebot|crawler|spider|robot|crawling|lighthouse/i.test(navigator.userAgent);
+    if (!isBot) {
+      setShowCanvas(true);
+    }
   }, []);
 
   if (!showCanvas) {

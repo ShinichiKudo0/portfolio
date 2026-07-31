@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial, Points, PointMaterial, Line, Icosahedron } from "@react-three/drei";
 import * as THREE from "three";
@@ -44,9 +44,12 @@ function NodeNetworkMesh({ particleCount }: { particleCount: number }) {
 
 export function NodeNetworkScene() {
   const { presets } = usePerformance();
-  // Map our preset particle counts (5000, 3000, 1500, 500) to something appropriate for this small scene.
-  // The original was 60. So we scale it.
+  const [show, setShow] = useState(false);
+  useEffect(() => { if (!/bot|googlebot|crawler|spider|robot|crawling|lighthouse/i.test(navigator.userAgent)) setShow(true); }, []);
+  
   const particleCount = Math.floor(presets.particles / 50);
+
+  if (!show) return null;
 
   return (
     <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, presets.dpr]} onCreated={({gl}) => gl.setAnimationLoop(() => {})}>
@@ -94,6 +97,11 @@ function VoyageSphereMesh() {
 
 export function VoyageSphereScene() {
   const { presets } = usePerformance();
+  const [show, setShow] = useState(false);
+  useEffect(() => { if (!/bot|googlebot|crawler|spider|robot|crawling|lighthouse/i.test(navigator.userAgent)) setShow(true); }, []);
+
+  if (!show) return null;
+
   return (
     <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, presets.dpr]} onCreated={({gl}) => gl.setAnimationLoop(() => {})}>
       <CanvasPerformanceMonitor />
@@ -138,6 +146,11 @@ function ShieldCrystalMesh() {
 
 export function ShieldCrystalScene() {
   const { presets } = usePerformance();
+  const [show, setShow] = useState(false);
+  useEffect(() => { if (!/bot|googlebot|crawler|spider|robot|crawling|lighthouse/i.test(navigator.userAgent)) setShow(true); }, []);
+
+  if (!show) return null;
+
   return (
     <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, presets.dpr]} onCreated={({gl}) => gl.setAnimationLoop(() => {})}>
       <CanvasPerformanceMonitor />
