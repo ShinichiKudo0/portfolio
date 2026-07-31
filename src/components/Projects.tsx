@@ -1,37 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
 import { Button } from "./ui/button";
-import { NodeNetworkScene, VoyageSphereScene, ShieldCrystalScene } from "./Project3DGraphics";
+import dynamic from "next/dynamic";
+
+const NodeNetworkScene = dynamic(() => import("./Project3DGraphics").then(mod => mod.NodeNetworkScene), { ssr: false });
+const VoyageSphereScene = dynamic(() => import("./Project3DGraphics").then(mod => mod.VoyageSphereScene), { ssr: false });
+const ShieldCrystalScene = dynamic(() => import("./Project3DGraphics").then(mod => mod.ShieldCrystalScene), { ssr: false });
 
 const PROJECTS = [
   {
     title: "AI Mentorship Network",
-    description: "Generic career advice doesn't scale. I built an adaptive mentorship platform that reads user profiles, dynamically routes them through a custom assessment engine, and pipes the signals into Gemini AI to generate hyper-personalized career roadmaps.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Gemini AI"],
+    bottleneck: "Generic career advice does not scale and fails to provide actionable, user-specific guidance.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Gemini AI"],
+    system: [
+      "Engineered an adaptive platform that dynamically routes user profiles through a custom assessment engine.",
+      "Piped assessment signals directly into Gemini AI to generate hyper-personalized career roadmaps in real-time."
+    ],
+    output: "Eliminated generic advice generation, delivering a 100% personalized roadmap for every unique user profile.",
     link: "https://ai-mentorship-network.vercel.app",
     Scene: NodeNetworkScene
   },
   {
     title: "Intelligent Voyage Itinerary Builder",
-    description: "Planning group travel is usually a nightmare of spreadsheets and tabs. I built an intelligent engine that ingests budget, group dynamics, and dates to instantly generate a personalized, multi-day itinerary. It's wrapped in a fluid, high-performance UI.",
-    tags: ["React.js", "Firebase", "Google OAuth"],
+    bottleneck: "Planning group travel is a fragmented, manual process involving disparate spreadsheets and browser tabs.",
+    stack: ["React.js", "Firebase", "Google OAuth"],
+    system: [
+      "Built an intelligent engine that ingests critical constraints like budget, group dynamics, and preferred dates.",
+      "Developed a fluid, high-performance UI to instantly synthesize and render a personalized, multi-day itinerary."
+    ],
+    output: "Reduced group trip planning time from hours to seconds by automating data synthesis and itinerary generation.",
     link: "https://bon-voyage-gilt.vercel.app",
     Scene: VoyageSphereScene
   },
   {
     title: "AI Shield (Security & Deepfake Detection)",
-    description: "Legacy security filters can't catch AI-generated attacks. I architected a real-time, stateless security agent in FastAPI that intercepts payloads and uses Librosa and Scikit-learn to instantly flag deepfake audio and AI phishing attempts.",
-    tags: ["Python", "FastAPI", "Scikit-learn", "REST API"],
+    bottleneck: "Legacy security filters rely on static signatures and cannot catch sophisticated AI-generated attacks or deepfakes.",
+    stack: ["Python", "FastAPI", "Scikit-learn", "Librosa"],
+    system: [
+      "Architected a real-time, stateless security agent built on FastAPI to intercept incoming payloads.",
+      "Integrated Librosa and Scikit-learn to run instant analytical models flagging deepfake audio and AI phishing attempts."
+    ],
+    output: "Created a robust, real-time detection pipeline capable of identifying AI anomalies that bypass legacy systems.",
     link: "https://ai-shield-pi.vercel.app",
     Scene: ShieldCrystalScene
   }
@@ -44,7 +61,7 @@ export function Projects() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div>
             <h2 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-4">
-              Featured Work
+              System Implementation Case Studies
             </h2>
             <div className="h-px w-12 bg-primary mb-8" />
             <p className="text-3xl md:text-5xl font-bold tracking-tight text-foreground max-w-xl leading-tight">
@@ -85,25 +102,35 @@ export function Projects() {
                 </div>
 
                 <div className="flex-1 flex flex-col p-8">
-                  <CardHeader className="p-0 mb-4">
+                  <CardHeader className="p-0 mb-6">
                     <CardTitle className="text-2xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
                       {project.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-0 flex-1">
-                    <CardDescription className="text-base text-muted-foreground leading-relaxed">
-                      {project.description}
-                    </CardDescription>
-                  </CardContent>
-                  <CardFooter className="p-0 pt-8 mt-auto flex flex-col items-start gap-6">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag, i) => (
-                        <span key={tag} className="px-3 py-1.5 text-xs font-medium bg-secondary/50 text-secondary-foreground rounded-md border border-border/50">
-                          {tag}
-                        </span>
-                      ))}
+                    <div className="space-y-5 text-[15px] text-muted-foreground leading-relaxed">
+                      <div>
+                        <span className="font-bold text-foreground block mb-1">The Bottleneck:</span>
+                        {project.bottleneck}
+                      </div>
+                      <div>
+                        <span className="font-bold text-foreground block mb-1">The Stack:</span>
+                        {project.stack.join(", ")}
+                      </div>
+                      <div>
+                        <span className="font-bold text-foreground block mb-1">The System:</span>
+                        <ul className="list-disc pl-5 space-y-1.5 marker:text-primary">
+                          {project.system.map((bullet, i) => (
+                            <li key={i}>{bullet}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <span className="font-bold text-foreground block mb-1">The Output:</span>
+                        <span className="text-primary font-medium">{project.output}</span>
+                      </div>
                     </div>
-                  </CardFooter>
+                  </CardContent>
                 </div>
               </Card>
             </motion.div>

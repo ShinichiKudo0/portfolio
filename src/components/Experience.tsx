@@ -1,35 +1,8 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
-import { CheckCircle2 } from "lucide-react";
-
-const EXPERIENCES = [
-  {
-    title: "Company Website & AI Chatbot",
-    description: "The old Rising Tides website was a drag-and-drop Framer site with no real SEO or AEO. I rebuilt it from scratch alone, from the responsive UI down to a custom AI chatbot that answers visitor questions instantly. I also built the backend, the secure API routes, and a CI/CD pipeline so it deploys itself to Vercel's edge network. It now performs significantly better than the old site.",
-  },
-  {
-    title: "Lead Qualification Engine",
-    description: "Sales reps were burning hours manually qualifying leads. I built an invisible, webhook-triggered pipeline that pulls signals and scores records automatically, reducing processing time by 98% and reclaiming 40 hours a week.",
-  },
-  {
-    title: "In-House Lead Enrichment Engine",
-    description: "We were bleeding $10 a day on basic data credits. I wrote a custom enrichment engine that scrapes HTML and merges LinkedIn payloads using AI, cutting our per-lead cost by over 80%.",
-  },
-  {
-    title: "LinkedIn DM Intelligence Agent",
-    description: "Managing LinkedIn DMs was eating up bandwidth. I designed a system that intercepts messages, classifies intent, and drafts replies for one-click approval in Slack. It effectively replaced a full-time SDR.",
-  },
-  {
-    title: "Website Visitor-to-Outreach Pipeline",
-    description: "High-intent website visitors were slipping through the cracks. I built a zero-touch pipeline that parses Slack notifications, dedupes against the CRM, scores them against our ICP, and pushes them straight into outreach sequences.",
-  },
-  {
-    title: "Autonomous AI Content Engine",
-    description: "Content creation was a messy, manual bottleneck. I shipped a multi-agent system that handles everything from topic research and copywriting to AI image generation and direct publishing, saving $15,000 annually.",
-  },
-];
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { CheckCircle2, ChevronRight } from "lucide-react";
 
 function TiltCard({ children }: { children: React.ReactNode }) {
   const x = useMotionValue(0);
@@ -88,7 +61,7 @@ export function Experience() {
           {/* Left Sticky Column */}
           <div className="lg:w-1/3 lg:sticky lg:top-32 h-fit">
             <h2 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-4">
-              Experience
+              How I Architect B2B Growth & Automation Workflows
             </h2>
             <div className="h-px w-12 bg-primary mb-8" />
             
@@ -99,38 +72,79 @@ export function Experience() {
             </h3>
             <h4 className="text-xl md:text-2xl font-medium mb-6 text-primary">AI Automation & Integration Engineer</h4>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              February 2025 to Present. Designing, building, and deploying AI agents, automation workflows, and full-stack web platforms that eliminate manual operations across GTM, sales enrichment, content, and outreach.
+              As an AI Automation & Integration Engineer, I architect and deploy zero-touch B2B growth pipelines, eliminating manual operations across GTM strategies, sales enrichment, and outreach. I specialize in building multi-agent systems and custom data endpoints to scale high-intent lead generation and client acquisition.
             </p>
           </div>
 
           {/* Right Scrolling Column (Cards) */}
           <div className="lg:w-2/3 flex flex-col gap-10">
-            {EXPERIENCES.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full"
-              >
-                <TiltCard>
-                  <Card className="bg-zinc-950/80 backdrop-blur-md border-zinc-800/80 overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <CardHeader className="relative z-10 pb-2">
-                      <CardTitle className="text-2xl flex items-start gap-4 text-foreground">
-                        {exp.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="relative z-10 pt-4">
-                      <CardDescription className="text-base text-muted-foreground leading-relaxed pl-0">
-                        {exp.description}
-                      </CardDescription>
-                    </CardContent>
-                  </Card>
-                </TiltCard>
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full"
+            >
+              <TiltCard>
+                <Card className="bg-zinc-950/80 backdrop-blur-md border-zinc-800/80 overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <CardHeader className="relative z-10 pb-4 border-b border-zinc-800/50">
+                    <CardTitle className="text-2xl flex items-center gap-2 text-foreground">
+                      Core Architecture
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10 pt-6">
+                    <ul className="space-y-4">
+                      {[
+                        "Engineered custom n8n and Make.com webhook-triggered workflows for real-time lead routing and CRM synchronization.",
+                        "Designed multi-agent AI content generation and publishing systems to scale inbound marketing without human bottleneck.",
+                        "Built robust Next.js App Router applications with Vercel edge deployment and automated CI/CD pipelines.",
+                        "Implemented automated Slack-based CRM deduping and ICP scoring systems to instantly qualify high-intent website visitors."
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                          <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </TiltCard>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              className="w-full"
+            >
+              <TiltCard>
+                <Card className="bg-zinc-950/80 backdrop-blur-md border-zinc-800/80 overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <CardHeader className="relative z-10 pb-4 border-b border-zinc-800/50">
+                    <CardTitle className="text-2xl flex items-center gap-2 text-foreground">
+                      Key Deployments
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10 pt-6">
+                    <ul className="space-y-4">
+                      {[
+                        "Engineered the Bar Convent London campaign, automatically processing and routing a 500-prospect lead split into targeted outreach sequences.",
+                        "Deployed a zero-touch website visitor-to-outreach pipeline that reduced manual sales qualification time by 98%.",
+                        "Built an in-house LinkedIn data enrichment engine utilizing AI HTML scraping to reduce per-lead data costs by over 80%.",
+                        "Designed a LinkedIn DM intelligence agent that intercepts, classifies, and drafts automated replies, effectively replacing full-time SDR bandwidth."
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                          <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </TiltCard>
+            </motion.div>
           </div>
 
         </div>

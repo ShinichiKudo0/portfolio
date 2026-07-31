@@ -17,10 +17,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mayank Mehra",
+  metadataBase: new URL("https://mayank-mehra.vercel.app"),
+  title: "Mayank Mehra | AI Systems Architect",
   description: "A showcase of my work and experience as an AI Systems Architect.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Mayank Mehra",
+    title: "Mayank Mehra | AI Systems Architect",
     description: "A showcase of my work and experience as an AI Systems Architect.",
     url: "https://mayank-mehra.vercel.app",
     siteName: "Mayank Mehra Portfolio",
@@ -28,9 +32,36 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mayank Mehra",
+    title: "Mayank Mehra | AI Systems Architect",
     description: "A showcase of my work and experience as an AI Systems Architect.",
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://mayank-mehra.vercel.app/#webpage",
+      "url": "https://mayank-mehra.vercel.app",
+      "name": "Mayank Mehra | AI Systems Architect Portfolio",
+      "about": {
+        "@id": "https://mayank-mehra.vercel.app/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mayank-mehra.vercel.app/#person",
+      "name": "Mayank Mehra",
+      "jobTitle": "AI Systems Architect",
+      "url": "https://mayank-mehra.vercel.app",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Rising Tides",
+        "url": "https://risingtides.io/"
+      }
+    }
+  ]
 };
 
 export default function RootLayout({
@@ -43,6 +74,12 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} antialiased dark`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans selection:bg-primary selection:text-primary-foreground bg-zinc-950 text-foreground relative">
         <PerformanceProvider>
           <SmoothScroll>
