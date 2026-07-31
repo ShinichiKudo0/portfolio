@@ -45,7 +45,7 @@ const jsonLd = {
       "@id": "https://mayank-mehra.vercel.app/#webpage",
       "url": "https://mayank-mehra.vercel.app",
       "name": "Mayank Mehra | AI Systems Architect Portfolio",
-      "about": {
+      "mainEntity": {
         "@id": "https://mayank-mehra.vercel.app/#person"
       }
     },
