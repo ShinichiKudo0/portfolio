@@ -73,13 +73,13 @@ export function About() {
           
           <div className="text-lg md:text-xl leading-relaxed font-medium space-y-8">
             <p>
-              I am a Software Engineer and Tech Builder. I don't just write code—I treat AI as a direct extension of my own brain to design, build, and ship complete systems from scratch.
+              I don't just write code. I treat AI as a direct extension of my own brain to design, architect, and ship complete systems that actually work.
             </p>
             <p className="text-muted-foreground">
-              Whether it's developing a high-performance Next.js full-stack platform, engineering a Python/FastAPI backend for machine learning, or orchestrating multi-agent AI pipelines, I can build it. I optimize for extreme leverage and zero friction, stripping out the latency between having an idea and seeing it run in production.
+              Most engineering bottlenecks are self-inflicted. I optimize for speed, extreme leverage, and zero friction, whether I'm engineering a machine learning backend or a full-stack Next.js application. I operate like a full product team disguised as one person. I strip out the latency between having an idea and seeing it run in production.
             </p>
             <p>
-              Right now, I'm building AI-powered security platforms, custom software architectures, and automated infrastructure that fundamentally changes how businesses operate. I operate like a full product team disguised as one person.
+              Right now, I'm building autonomous agents, ruthless automation pipelines, and high-performance web platforms that fundamentally change how things operate. If a process requires human repetition, I write the code that kills it.
             </p>
           </div>
         </div>

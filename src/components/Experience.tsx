@@ -96,10 +96,9 @@ export function Experience() {
                   <CardContent className="relative z-10 pt-6">
                     <ul className="space-y-4">
                       {[
-                        "Engineered custom n8n and Make.com webhook-triggered workflows for real-time lead routing and CRM synchronization.",
-                        "Designed multi-agent AI content generation and publishing systems to scale inbound marketing without human bottleneck.",
-                        "Built robust Next.js App Router applications with Vercel edge deployment and automated CI/CD pipelines.",
-                        "Implemented automated Slack-based CRM deduping and ICP scoring systems to instantly qualify high-intent website visitors."
+                        "Architected and deployed full-stack web platforms using Next.js, TypeScript, and Tailwind CSS, secured by serverless APIs and deployed via Vercel CI/CD pipelines.",
+                        "Engineered robust webhook-triggered automation pipelines integrating n8n, HubSpot API, and Clay for real-time lead routing and data enrichment.",
+                        "Designed multi-agent systems leveraging OpenAI GPT and Unipile API for autonomous messaging, sentiment analysis, and intelligent content generation."
                       ].map((item, index) => (
                         <li key={index} className="flex items-start gap-3 text-muted-foreground">
                           <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -130,10 +129,10 @@ export function Experience() {
                   <CardContent className="relative z-10 pt-6">
                     <ul className="space-y-4">
                       {[
-                        "Engineered the Bar Convent London campaign, automatically processing and routing a 500-prospect lead split into targeted outreach sequences.",
-                        "Deployed a zero-touch website visitor-to-outreach pipeline that reduced manual sales qualification time by 98%.",
-                        "Built an in-house LinkedIn data enrichment engine utilizing AI HTML scraping to reduce per-lead data costs by over 80%.",
-                        "Designed a LinkedIn DM intelligence agent that intercepts, classifies, and drafts automated replies, effectively replacing full-time SDR bandwidth."
+                        "Company Website & Chatbot: Independently architected and deployed the Rising Tides production website end-to-end, integrating a custom AI chatbot and secure serverless workflows.",
+                        "Lead Qualification & Enrichment Engines: Deployed a zero-touch pipeline that scores records against ICP criteria and enriches data via AI, reducing manual processing time by 98% and cutting per-lead costs by 80%.",
+                        "LinkedIn DM Intelligence Agent: Designed a system that captures incoming DMs, classifies intent, and drafts automated Slack-approved replies, effectively replacing full-time SDR bandwidth.",
+                        "Autonomous AI Content Engine: Shipped a multi-agent pipeline that handles topic research, AI image generation, and direct publishing, saving $15,000 annually in production costs."
                       ].map((item, index) => (
                         <li key={index} className="flex items-start gap-3 text-muted-foreground">
                           <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-0.5" />

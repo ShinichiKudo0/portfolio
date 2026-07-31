@@ -57,7 +57,7 @@ export function Hero() {
           ref={subtitleRef} 
           className="text-base sm:text-lg md:text-2xl text-foreground/90 max-w-3xl mb-10 leading-relaxed font-light drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]"
         >
-          A versatile builder who works across the entire stack. From developing React/Next.js frontends and Python/FastAPI backends to orchestrating LLM-powered multi-agent systems and automating enterprise GTM workflows.
+          A human who engineers solutions using his brain and AI as a force multiplier. I design, architect, and ship complete systems—from high-performance web platforms to autonomous AI pipelines—that would typically require an entire product team.
         </p>
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row flex-wrap gap-4">
