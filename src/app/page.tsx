@@ -1,5 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
+import { FaqSection } from "@/components/FaqSection";
+import { LiveStatsServer } from "@/components/LiveStatsServer";
 import dynamic from 'next/dynamic';
 
 const Experience = dynamic(() => import("@/components/Experience").then(mod => mod.Experience));
@@ -11,10 +13,12 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <Hero />
+      <LiveStatsServer />
       <About />
       <Experience />
       <Projects />
       <Skills />
+      <FaqSection />
       <Contact />
     </div>
   );
