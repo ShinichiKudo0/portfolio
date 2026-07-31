@@ -43,7 +43,7 @@ export function Hero() {
       className="relative min-h-[90vh] flex flex-col justify-center pt-24 md:pt-32 pb-20 md:pb-32 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto"
     >
       <div className="relative z-10 w-full overflow-hidden">
-        <div ref={titleRef} className="mb-12 w-full flex flex-col font-black uppercase tracking-widest leading-[0.85] text-[4.5vw] sm:text-[5vw] md:text-[4.5vw] lg:text-[4vw] xl:text-[3.5vw] drop-shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+        <div ref={titleRef} className="mb-12 w-full flex flex-col font-black uppercase leading-[0.85] text-[6vw] sm:text-[6vw] md:text-[5vw] lg:text-[4.5vw] xl:text-[4vw] drop-shadow-[0_0_15px_rgba(0,0,0,0.3)]">
           <div className="flex justify-between w-full text-foreground">
             {'ENGINEERING'.split('').map((char, i) => <span key={i}>{char}</span>)}
           </div>
